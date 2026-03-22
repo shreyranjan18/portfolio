@@ -14,7 +14,7 @@ const projectsList = [
       'Dynamic dashboard monitoring for stakeholders'
     ],
     tech: ['PHP', 'MySQL', 'JavaScript', 'HTML'],
-    links: { github: 'https://github.com/shreyranjan18/Wool-Farm-to-Fabric' },
+    links: { github: 'https://github.com/shreyranjan18/Wool-Farm-to-Fabric', live: 'https://littleloom.vercel.app/' },
   },
   {
     title: 'Little Loom',
@@ -27,7 +27,20 @@ const projectsList = [
       'Progress tracking dashboard for parents/teachers'
     ],
     tech: ['TypeScript', 'React', 'Tailwind', 'Supabase'],
-    links: { github: 'https://github.com/shreyranjan18/little-loom' },
+    links: { github: 'https://github.com/shreyranjan18/little-loom', live: 'https://littleloom.vercel.app/' },
+  },
+  {
+    title: 'Opp-genie',
+    subtitle: 'TOOLING & INSIGHTS',
+    date: 'Jun 2024',
+    desc: 'A TypeScript-based project focusing on creating structured opportunities with dynamic tooling and insights.',
+    bullets: [
+      'Structured opportunity logic implementation',
+      'Dynamic internal tooling and rich user insights',
+      'Scalable and modular TypeScript architecture'
+    ],
+    tech: ['TypeScript', 'React', 'NodeJS'],
+    links: { github: 'https://github.com/shreyranjan18/opp-genie', live: 'https://opp-genie.vercel.app/' },
   },
   {
     title: 'GovSpark Connect',
@@ -54,19 +67,6 @@ const projectsList = [
     ],
     tech: ['TypeScript', 'React', 'Web'],
     links: { github: 'https://github.com/shreyranjan18/Eco-commerce' },
-  },
-  {
-    title: 'Opp-genie',
-    subtitle: 'TOOLING & INSIGHTS',
-    date: 'Jun 2024',
-    desc: 'A TypeScript-based project focusing on creating structured opportunities with dynamic tooling and insights.',
-    bullets: [
-      'Structured opportunity logic implementation',
-      'Dynamic internal tooling and rich user insights',
-      'Scalable and modular TypeScript architecture'
-    ],
-    tech: ['TypeScript', 'React', 'NodeJS'],
-    links: { github: 'https://github.com/shreyranjan18/opp-genie' },
   }
 ];
 
@@ -157,8 +157,8 @@ const Projects = () => {
               ))}
             </div>
             
-            {/* Footer Link */}
-            <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center' }}>
+            {/* Footer Links */}
+            <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
               <a 
                 href={project.links.github} 
                 target="_blank" 
@@ -178,6 +178,28 @@ const Projects = () => {
               >
                 View on GitHub <ExternalLink size={16} />
               </a>
+
+              {project.links.live && (
+                <a 
+                  href={project.links.live} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  style={{ 
+                    color: 'var(--accent-2, #3b82f6)', 
+                    fontSize: '0.9rem', 
+                    fontWeight: '500', 
+                    textDecoration: 'none', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '0.5rem', 
+                    transition: 'opacity 0.3s ease' 
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                >
+                  Live Demo <ExternalLink size={16} />
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
