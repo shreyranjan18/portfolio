@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin } from 'lucide-react';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const socialIconStyles = {
   display: 'flex', 
@@ -101,7 +102,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Desktop Social Icons */}
+        {/* Desktop Social Icons & Theme */}
         <div style={{ display: 'none', gap: '1rem', alignItems: 'center' }} className="desktop-menu">
           <a href="https://github.com/shreyranjan18" target="_blank" rel="noreferrer" style={socialIconStyles}>
             <Github size={20} />
@@ -109,6 +110,7 @@ const Navbar = () => {
           <a href="https://linkedin.com/in/shreyranjankumar" target="_blank" rel="noreferrer" style={socialIconStyles}>
             <Linkedin size={20} />
           </a>
+          <ThemeSwitcher />
         </div>
 
         {/* Mobile Toggle */}
@@ -143,13 +145,14 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem', alignItems: 'center' }}>
              <a href="https://github.com/shreyranjan18" target="_blank" rel="noreferrer" style={socialIconStyles}>
                <Github size={20} />
              </a>
              <a href="https://linkedin.com/in/shreyranjankumar" target="_blank" rel="noreferrer" style={socialIconStyles}>
                <Linkedin size={20} />
              </a>
+             <ThemeSwitcher />
           </div>
         </div>
       )}

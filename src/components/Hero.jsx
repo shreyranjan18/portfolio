@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, Eye } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -51,26 +51,49 @@ const Hero = () => {
               </div>
             </div>
 
-            <a 
-              href="/resume.pdf" 
-              download
-              target="_blank"
-              style={{ 
-                display: 'inline-flex', 
-                alignItems: 'center', 
-                gap: '0.75rem', 
-                color: 'var(--text-primary)', 
-                textDecoration: 'none',
-                fontWeight: 600,
-                fontSize: '0.95rem',
-                transition: 'opacity 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-            >
-              <Download color="var(--accent-1)" size={20} />
-              Download Resume (PDF)
-            </a>
+            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+              <a 
+                href="https://drive.google.com/file/d/1u4Ez3OzHkQFgRn41LL-oepe2MELiEDxq/view?usp=sharing" 
+                download
+                target="_blank"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '0.75rem', 
+                  color: 'var(--text-primary)', 
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  transition: 'opacity 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                <Download color="var(--accent-1)" size={20} />
+                Download (PDF)
+              </a>
+
+              <a 
+                href="https://drive.google.com/file/d/1u4Ez3OzHkQFgRn41LL-oepe2MELiEDxq/view?usp=sharing" 
+                target="_blank"
+                rel="noreferrer"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '0.75rem', 
+                  color: 'var(--text-primary)', 
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  transition: 'opacity 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                <Eye color="var(--accent-1)" size={20} />
+                View Resume
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -83,24 +106,35 @@ const Hero = () => {
           <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '500px',
+            maxWidth: '430px',
             aspectRatio: '1',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, rgba(168,85,247,0.2), rgba(6,182,212,0.2))',
-            border: '2px solid rgba(255,255,255,0.05)',
+            background: 'linear-gradient(135deg, rgba(var(--accent-rgb), 0.15), rgba(var(--accent-rgb), 0.02))',
+            border: '4px solid rgba(var(--accent-rgb), 0.3)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 80px rgba(168,85,247,0.1)'
+            boxShadow: '0 0 80px rgba(var(--accent-rgb), 0.2)',
+            padding: '12px'
           }}>
              <div style={{
-               position: 'absolute', inset: 20, borderRadius: '50%',
-               border: '1px dashed rgba(255,255,255,0.2)', animation: 'spin 20s linear infinite'
+               position: 'absolute', inset: -15, borderRadius: '50%',
+               border: '1px dashed rgba(var(--accent-rgb), 0.4)', animation: 'spin 20s linear infinite', zIndex: 1
              }} />
-             <div style={{ textAlign: 'center', zIndex: 10 }}>
-                <h1 style={{ fontSize: '8rem', color: 'rgba(255,255,255,0.05)', lineHeight: 1 }}>S</h1>
-                <h3 className="text-gradient" style={{ letterSpacing: '4px' }}>CODE</h3>
-             </div>
+             
+             <img 
+               src="/profile.jpg" 
+               alt="Shrey Ranjan Kumar" 
+               style={{
+                 width: '100%',
+                 height: '100%',
+                 objectFit: 'cover',
+                 borderRadius: '50%',
+                 zIndex: 10,
+                 boxShadow: 'inset 0 0 40px rgba(0,0,0,0.5)',
+                 filter: 'drop-shadow(0 0 20px rgba(var(--accent-rgb), 0.3))'
+               }}
+             />
           </div>
         </motion.div>
       </div>

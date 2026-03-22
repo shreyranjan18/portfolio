@@ -8,7 +8,6 @@ import Training from './components/Training';
 import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
-import ThemeSwitcher from './components/ThemeSwitcher';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -33,7 +32,6 @@ function App() {
       </main>
       
       <Footer />
-      <ThemeSwitcher />
     </>
   );
 }

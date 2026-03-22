@@ -27,13 +27,13 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 999 }}>
+    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', zIndex: 999 }}>
       {isOpen && (
         <div style={{
           position: 'absolute',
-          bottom: '100%',
+          top: '100%',
           right: 0,
-          marginBottom: '1rem',
+          marginTop: '1rem',
           background: 'var(--bg-secondary)',
           backdropFilter: 'blur(12px)',
           border: '1px solid var(--border-color)',
@@ -70,8 +70,8 @@ const ThemeSwitcher = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         style={{
-          width: '56px',
-          height: '56px',
+          width: '42px',
+          height: '42px',
           borderRadius: '50%',
           background: 'var(--accent-gradient)',
           color: 'white',
@@ -80,7 +80,7 @@ const ThemeSwitcher = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          boxShadow: '0 4px 15px rgba(var(--accent-rgb), 0.4)',
+          boxShadow: '0 4px 15px rgba(var(--accent-rgb), 0.3)',
           transition: 'all 0.3s ease',
           outline: 'none'
         }}
@@ -94,7 +94,7 @@ const ThemeSwitcher = () => {
         }}
         title="Change Theme Color"
       >
-        <Palette size={24} />
+        <Palette size={18} />
       </button>
     </div>
   );
